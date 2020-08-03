@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: k8s-demo
-        image: vinga2805/mynodejsapp 
+        image: 554472277228.dkr.ecr.ap-south-1.amazonaws.com/nodejs-test
         ports:
         - name: nodejs-port
           containerPort: 3000
