@@ -20,7 +20,7 @@
       command: mv kubectl /usr/local/bin/
       when: kube_version.rc==1
     - name: Login to ecr repo.
-      shell: "$(/usr/local/bin/aws ecr get-login --sabamoazzam28@gmail.com --region ap-south-1)"
+      shell: "$(/usr/local/bin/aws ecr get-login-password --region ap-south-1 | docker login --username AWS --password-stdin 554472277228.dkr.ecr.ap-south-1.amazonaws.com)"
     - name: Build Dockerfile
       shell: docker build -t e9ae3c220b23 554472277228.dkr.ecr.ap-south-1.amazonaws.com/nodejs-test
     - name: Push Dockerfile to ecr
