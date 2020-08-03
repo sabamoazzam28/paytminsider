@@ -22,9 +22,11 @@
     - name: Login to ecr repo.
       shell: "$(/usr/local/bin/aws ecr get-login-password --region ap-south-1 | docker login --username AWS --password-stdin 554472277228.dkr.ecr.ap-south-1.amazonaws.com)"
     - name: Build Dockerfile
-      shell: docker build -t e9ae3c220b23 554472277228.dkr.ecr.ap-south-1.amazonaws.com/nodejs-test
+      shell: docker build -t nodejs-test
+    - name: Tag Image in repository
+      shell: docker tag nodejs-test:latest 554472277228.dkr.ecr.ap-south-1.amazonaws.com/nodejs-test:latest
     - name: Push Dockerfile to ecr
-      shell: docker push e9ae3c220b23 554472277228.dkr.ecr.ap-south-1.amazonaws.com/nodejs-test
+      shell: docker push 554472277228.dkr.ecr.ap-south-1.amazonaws.com/nodejs-test:latest
     - name: Create namespace
       command: kubectl create ns paytm
       become_user: ubuntu
