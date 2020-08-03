@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: k8s-demo
-        image: 554472277228.dkr.ecr.ap-south-1.amazonaws.com/nodejs-test
+        image: 554472277228.dkr.ecr.ap-south-1.amazonaws.com/nodejs-test:latest
         ports:
         - name: nodejs-port
           containerPort: 3000
