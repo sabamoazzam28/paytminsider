@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment 
+metadata:
+  name: captain-deployment
+  labels: 
+    app: captain-clap
+spec:
+  replicas: 10
+  selector:
+    matchLabels:
+      app: captain-clap
+  template:
+    metadata:
+      labels:
+        app: captain-clap 
+    spec:
+      containers:
+      - name: k8s-demo
+        image: vinga2805/mynodejsapp 
+        ports:
+        - name: nodejs-port
+          containerPort: 3000
